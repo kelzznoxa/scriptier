@@ -8,54 +8,66 @@ HTML_PAGE = '''
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHADOW SENSI AI - V6</title>
+    <title>SHADOW SENSI AI - V6 PRO</title>
     <style>
         :root { --neon: #00f3ff; --purple: #bc13fe; --dark: #050505; }
-        body { background: var(--dark); color: white; font-family: 'Orbitron', sans-serif; margin: 0; padding: 15px; }
-        .container { max-width: 480px; margin: auto; border: 2px solid var(--purple); border-radius: 20px; background: #0f0f12; padding: 25px; box-shadow: 0 0 40px rgba(188, 19, 254, 0.6); }
-        h1 { color: var(--neon); text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 0 15px var(--neon); font-size: 1.6rem; text-align: center; }
-        .sub-title { text-align: center; color: #888; font-size: 0.7rem; margin-bottom: 20px; text-transform: uppercase; }
-        input { width: 100%; padding: 15px; border-radius: 12px; border: 1px solid var(--neon); background: #000; color: white; box-sizing: border-box; margin-bottom: 15px; text-align: center; }
-        button { width: 100%; padding: 18px; background: linear-gradient(45deg, var(--neon), var(--purple)); color: white; border: none; border-radius: 12px; cursor: pointer; font-weight: bold; text-transform: uppercase; }
+        body { background: var(--dark); color: white; font-family: 'Orbitron', sans-serif; margin: 0; padding: 10px; }
+        .container { max-width: 480px; margin: auto; border: 2px solid var(--purple); border-radius: 20px; background: #0f0f12; padding: 20px; box-shadow: 0 0 40px rgba(188, 19, 254, 0.6); }
+        h1 { color: var(--neon); text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 0 15px var(--neon); font-size: 1.4rem; text-align: center; margin-bottom: 5px; }
+        .sub-title { text-align: center; color: #888; font-size: 0.6rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+        input { width: 100%; padding: 15px; border-radius: 12px; border: 1px solid var(--neon); background: #000; color: white; box-sizing: border-box; margin-bottom: 15px; text-align: center; outline: none; }
+        button { width: 100%; padding: 18px; background: linear-gradient(45deg, var(--neon), var(--purple)); color: white; border: none; border-radius: 12px; cursor: pointer; font-weight: bold; text-transform: uppercase; transition: 0.3s; }
+        button:hover { opacity: 0.8; box-shadow: 0 0 20px var(--neon); }
         .result-area { margin-top: 25px; display: none; }
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-        .item { background: #1a1a1f; padding: 15px; border-radius: 12px; border-left: 3px solid var(--neon); text-align: center; }
-        .value { font-size: 1.4rem; font-weight: bold; color: var(--neon); }
-        .tips-box { background: rgba(188, 19, 254, 0.1); border: 1px solid var(--purple); border-radius: 15px; padding: 20px; margin-top: 20px; font-size: 0.75rem; text-align: left; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+        .item { background: #1a1a1f; padding: 10px; border-radius: 10px; border-bottom: 2px solid var(--purple); text-align: center; }
+        .value { font-size: 1.2rem; font-weight: bold; color: var(--neon); }
+        .label { font-size: 0.55rem; color: #aaa; margin-top: 5px; }
+        .tips-box { background: rgba(0, 243, 255, 0.05); border: 1px solid var(--neon); border-radius: 15px; padding: 15px; margin-top: 20px; font-size: 0.7rem; line-height: 1.5; }
+        .totem-title { color: var(--neon); font-weight: bold; display: block; margin-bottom: 5px; text-transform: uppercase; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>SHADOW SENSI AI</h1>
-        <div class="sub-title">Bypassing System... Secured by Anonymous</div>
+        <div class="sub-title">System Analysis v6.0.2 - Optimized for 2026</div>
         <input type="text" id="device" placeholder="NAMA HP ANDA...">
-        <button onclick="analyze()">INJECT GHOST SCRIPT</button>
+        <button onclick="analyze()">INJECT SHADOW SCRIPT</button>
+        
         <div id="resultArea" class="result-area">
             <div class="grid">
-                <div class="item"><div class="value" id="v1">0</div><div style="font-size:0.6rem">GENERAL</div></div>
-                <div class="item"><div class="value" id="v2">0</div><div style="font-size:0.6rem">RED DOT</div></div>
-                <div class="item"><div class="value" id="v3">0</div><div style="font-size:0.6rem">DPI</div></div>
-                <div class="item"><div class="value" id="v4">0</div><div style="font-size:0.6rem">TOMBOL</div></div>
+                <div class="item"><div class="value" id="v1">0</div><div class="label">GENERAL</div></div>
+                <div class="item"><div class="value" id="v2">0</div><div class="label">RED DOT</div></div>
+                <div class="item"><div class="value" id="v3">0</div><div class="label">2X SCOPE</div></div>
+                <div class="item"><div class="value" id="v4">0</div><div class="label">4X SCOPE</div></div>
+                <div class="item"><div class="value" id="v5">0</div><div class="label">SNIPER</div></div>
+                <div class="item"><div class="value" id="v6">0</div><div class="label">FREE LOOK</div></div>
+                <div class="item" style="grid-column: span 2;"><div class="value" id="v7">0</div><div class="label">DPI OPTIMAL</div></div>
+                <div class="item"><div class="value" id="v8">45%</div><div class="label">BUTTON</div></div>
             </div>
+            
             <div class="tips-box">
-                <b>SHADOW TIPS:</b><br>
-                • Sensi ini sudah dioptimalkan (Anti-Lag).<br>
-                • Gunakan <b>J-Shape Drag</b> untuk hasil maksimal.<br>
-                • Rekomendasi Tombol Tembak: <b>45% - 50%</b>.
+                <span class="totem-title">⚡ TOTEM OPTIMIZATION:</span>
+                • Bersihkan Cache Free Fire sebelum login.<br>
+                • Aktifkan <b>Opsi Pengembang</b> > Force 4x MSAA.<br>
+                • Gunakan <b>Game Turbo</b> untuk stabilkan FPS Totem.<br>
+                • Sensi ini bypass limit sistem (Auto Aim Lock).
             </div>
         </div>
     </div>
     <script>
         function analyze() {
-            // Sensi General & Red Dot (Tetap tinggi biar licin)
-            document.getElementById('v1').innerText = Math.floor(Math.random() * (200 - 192 + 1)) + 192;
-            document.getElementById('v2').innerText = Math.floor(Math.random() * (198 - 188 + 1)) + 188;
+            // ALL SENSI FULL SAKTI (190 - 200)
+            document.getElementById('v1').innerText = Math.floor(Math.random() * (200 - 195 + 1)) + 195;
+            document.getElementById('v2').innerText = Math.floor(Math.random() * (200 - 192 + 1)) + 192;
+            document.getElementById('v3').innerText = Math.floor(Math.random() * (200 - 190 + 1)) + 190;
+            document.getElementById('v4').innerText = Math.floor(Math.random() * (200 - 194 + 1)) + 194;
+            document.getElementById('v5').innerText = Math.floor(Math.random() * (200 - 185 + 1)) + 185;
+            document.getElementById('v6').innerText = Math.floor(Math.random() * (200 - 190 + 1)) + 190;
             
-            // DPI OPTIMAL (Diturunkan sesuai permintaan agar tidak terlalu naik)
-            // Range 480 - 580 adalah angka paling stabil di tahun 2026
-            document.getElementById('v3').innerText = Math.floor(Math.random() * (580 - 480 + 1)) + 480;
+            // DPI TETAP OPTIMAL (Diturunkan sesuai permintaan)
+            document.getElementById('v7').innerText = Math.floor(Math.random() * (580 - 520 + 1)) + 520;
             
-            document.getElementById('v4').innerText = "45%";
             document.getElementById('resultArea').style.display = 'block';
         }
     </script>
@@ -68,4 +80,4 @@ def home():
     return HTML_PAGE
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
